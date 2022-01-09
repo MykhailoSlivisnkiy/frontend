@@ -4,8 +4,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 import { AppComponent } from './app.component';
-import { GoodsComponent } from './goods/goods.component';
-import { CardComponent } from './card/card.component';
+import { GoodsComponent } from './components/goods/goods.component';
+import { CardComponent } from './components/card/card.component';
 
 @NgModule({
   declarations: [
