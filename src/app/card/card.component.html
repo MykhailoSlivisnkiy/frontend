@@ -1,0 +1,25 @@
+<div class="card-pizza" >
+  <div class="card-pizza__img">
+    <img src="{{good.img}}" alt="">
+  </div>
+  <div class="card-pizza__title">
+    <p>{{good.title}}</p>
+  </div>
+  <div class="card-pizza__description">
+    <p>{{good.title}}</p>
+  </div>
+  <div class="card-pizza__pay">
+    <div class="pizza__pay-price">
+      <p>{{good.price}}₴</p>
+    </div>
+    <div class="pizza__pay-count">
+      <div class="minus"><span></span></div>
+      <input min="1" maxlength="3"  name="" id="" cols="2" rows="1">
+      <div class="plus" ><span></span>
+      </div>
+    </div>
+  </div>
+  <div class="pizza__pay-button">
+    <button [disabled]="false">Add to basket</button>
+  </div>
+</div>
