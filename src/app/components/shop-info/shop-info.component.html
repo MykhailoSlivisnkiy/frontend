@@ -1,3 +1,42 @@
-<p>shop-info works! {{shopId}}</p>
+<mat-card class="wrap-shop-info">
+  <mat-card-content layout="row" layout-align="space-between">
+    <div class="shop-info">
+      <img src="{{shop.image}}" alt="" class="logo-icon">
+      <mat-card class="shop-info-detail">
+        <form class="example-form">
+          <div class="shop-info-fields">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Name</mat-label>
+              <input matInput placeholder="Ex. Pizza" value={{shop.name}} disabled>
+            </mat-form-field>
 
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Name</mat-label>
+              <input matInput placeholder="Ex. Pizza" value={{shop.name}} disabled>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Name</mat-label>
+              <input matInput placeholder="Ex. Pizza" value={{shop.name}} disabled>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Name</mat-label>
+              <input matInput placeholder="Ex. Pizza" value={{shop.name}} disabled>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Name</mat-label>
+              <input matInput placeholder="Ex. Pizza" value={{shop.name}} disabled>
+            </mat-form-field>
+          </div>
+
+          <div class="subscribe-button">
+            <button mat-raised-button color="warn" (click)="openModal()">Subscribe</button>
+          </div>
+        </form>
+      </mat-card>
+    </div>
+  </mat-card-content>
+</mat-card>
 <app-goods [shopId]="shopId"></app-goods>

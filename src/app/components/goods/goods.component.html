@@ -7,8 +7,6 @@
         <app-good-card fxFlex.gt-sm="33%" fxFlex.gt-xs="50%" *ngFor="let good of goods" [good]="good"></app-good-card>
       </div>
     </div>
-    <div class="goods__pay-button">
-      <button [disabled]="false">Add new clothes</button>
-    </div>
+    <button mat-raised-button color="primary" style="display: block; margin: auto">Add new clothes</button>
   </div>
 </div>

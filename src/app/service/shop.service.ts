@@ -14,4 +14,8 @@ export class ShopService {
   getAllShops() {
     return this.http.get<Shop[]>(this.constantService.goodsServiceURL + '/shops');
   }
+
+  getShopById(id: number) {
+    return this.http.get<Shop>(this.constantService.goodsServiceURL + '/shops/' + id);
+  }
 }

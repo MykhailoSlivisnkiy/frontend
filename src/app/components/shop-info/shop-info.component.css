@@ -1,3 +1,34 @@
+.wrap-shop-info {
+  margin: 2%;
+  width: 95%;
+}
 
+.logo-icon {
+  width: 25%;
+  border-radius: 5%;
+}
+
+.shop-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.shop-info-detail {
+  margin: 0% 0% 0% 1%;
+  flex-grow: 1;
+}
+
+.shop-info-fields {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.subscribe-button {
+  flex-direction: row;
+  align-items: flex-end;
+  margin-top: auto;
+}
 
 /*# sourceMappingURL=shop-info.component.css.map */

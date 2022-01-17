@@ -1,0 +1,22 @@
+.subscribe-choices {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.image {
+  width: 150px;
+}
+
+.subscribe-buttons {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.subscribe-button {
+  margin-left: 5px;
+}
+
+/*# sourceMappingURL=subscribe-module.component.css.map */

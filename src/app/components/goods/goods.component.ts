@@ -19,6 +19,7 @@ export class GoodsComponent implements OnInit {
     this.goodsService.getGoodsByShop(this.shopId)
       .subscribe((data: Goods[]) => {
         this.goods = data;
+        console.log(this.goods);
         if(this.goods.length !== 0) {
           this.isGoodsListEmpty = true;
         }
