@@ -1,4 +1,4 @@
-.card-pizza__img {
+.card-goods__img {
   overflow: hidden;
   transition: 500ms;
   padding: 30px;
@@ -9,11 +9,11 @@
   }
 }
 
-.card-pizza {
+.card-goods {
   padding-bottom: 20px;
   transition: 500ms;
 
-  .card-pizza__img {
+  .card-goods__img {
     img {
       &:hover {
         transform: scale(1.2);
@@ -26,7 +26,7 @@
   }
 }
 
-.card-pizza__title {
+.card-goods__title {
   p {
     padding-top: 20px;
     text-align: center;
@@ -35,7 +35,7 @@
   }
 }
 
-.card-pizza__description {
+.card-goods__description {
   p {
     font-family: 'Roboto', sans-serif;
     padding: 10px;
@@ -45,17 +45,17 @@
   }
 }
 
-.card-pizza__pay {
+.card-goods__pay {
   display: flex;
   justify-content: center;
   margin: 5px 0;
 
-  .pizza__pay-price {
+  .goods__pay-price {
     font-size: 20pt;
     color: brown;
   }
 
-  .pizza__pay-count {
+  .goods__pay-count {
     display: flex;
     margin: 0 0 0 20px;
 
@@ -123,7 +123,7 @@
   }
 }
 
-.pizza__pay-button {
+.goods__pay-button {
   width: 200px;
   height: 30px;
   margin: 0 auto;

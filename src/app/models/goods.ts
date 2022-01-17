@@ -1,7 +1,8 @@
 export class Goods {
   constructor(
-    public title: string,
-    public img: string,
+    public name: string,
+    public image: string,
+    public count: number,
     public price: number
   ) {
   }

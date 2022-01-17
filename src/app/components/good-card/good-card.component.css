@@ -1,0 +1,126 @@
+.card-goods__img {
+  overflow: hidden;
+  transition: 500ms;
+  padding: 30px;
+}
+.card-goods__img img {
+  transition: 500ms;
+  width: 100%;
+}
+
+.card-goods {
+  padding-bottom: 20px;
+  transition: 500ms;
+}
+.card-goods .card-goods__img img:hover {
+  transform: scale(1.2);
+}
+.card-goods:hover {
+  box-shadow: 0 0 5px #4f4f4f;
+}
+
+.card-goods__title p {
+  padding-top: 20px;
+  text-align: center;
+  font-size: 20pt;
+  font-weight: 700;
+}
+
+.card-goods__description p {
+  font-family: "Roboto", sans-serif;
+  padding: 10px;
+  font-size: 11pt;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.card-goods__pay {
+  display: flex;
+  justify-content: center;
+  margin: 5px 0;
+}
+.card-goods__pay .goods__pay-price {
+  font-size: 20pt;
+  color: brown;
+}
+.card-goods__pay .goods__pay-count {
+  display: flex;
+  margin: 0 0 0 20px;
+}
+.card-goods__pay .goods__pay-count input {
+  border: solid 0.5px rgba(0, 0, 0, 0.2);
+  width: 30px;
+  text-align: center;
+  margin-bottom: 3px;
+}
+.card-goods__pay .plus {
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+.card-goods__pay .minus {
+  display: block;
+  position: relative;
+  width: 15px;
+  height: 15px;
+}
+.card-goods__pay .minus span {
+  display: block;
+  border-radius: 1px;
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  top: 10px;
+  right: 2px;
+  background: #000;
+}
+.card-goods__pay .plus {
+  display: block;
+  position: relative;
+  width: 15px;
+  height: 15px;
+}
+.card-goods__pay .plus span {
+  display: block;
+  border-radius: 1px;
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  top: 10px;
+  left: 2px;
+  background: #000;
+}
+.card-goods__pay .plus::before {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 2px;
+  border-radius: 1px;
+  left: 8.5px;
+  top: 3px;
+  background: #000;
+}
+
+.goods__pay-button {
+  width: 200px;
+  height: 30px;
+  margin: 0 auto;
+}
+.goods__pay-button button {
+  transition: 200ms;
+  border: 2px solid brown;
+  color: white;
+  font-size: 13pt;
+  border-radius: 5px;
+  background: brown;
+  height: 100%;
+  width: 100%;
+}
+.goods__pay-button button:hover {
+  background: white;
+  color: brown;
+  box-shadow: 0 0 5px black;
+}
+
+/*# sourceMappingURL=good-card.component.css.map */

@@ -1,0 +1,11 @@
+<div class="wrap-goods">
+  <div class="content">
+    <h1 class="goods__title">Shops</h1>
+    <div *ngIf="!isShopsEmpty" class="no_shops">No Shops available</div>
+    <div *ngIf="isShopsEmpty">
+      <div fxLayout="row wrap" fxLayoutGap="0 grid">
+        <app-shop-card fxFlex.gt-sm="33%" fxFlex.gt-xs="50%" *ngFor="let shop of shops" [shop]="shop"></app-shop-card>
+      </div>
+    </div>
+  </div>
+</div>

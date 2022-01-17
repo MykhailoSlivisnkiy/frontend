@@ -26,7 +26,7 @@
   z-index: 20;
 }
 
-.no_clothes {
+.no_shops {
   text-align: center;
   font-family: "Roboto", sans-serif;
   padding: 20% 20px;
@@ -35,4 +35,4 @@
   color: crimson;
 }
 
-/*# sourceMappingURL=goods.component.css.map */
+/*# sourceMappingURL=shops.component.css.map */

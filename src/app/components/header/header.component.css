@@ -1,0 +1,236 @@
+.redCircle {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: brown;
+  position: absolute;
+  right: 140px;
+  top: 15px;
+  z-index: 20;
+}
+
+@media (max-width: 920px) {
+  .redCircle {
+    display: none;
+  }
+}
+.wrap-header {
+  width: auto;
+  height: 100px;
+  background: #2f2424;
+  display: flex;
+}
+
+.adaptive_menu {
+  position: absolute;
+}
+
+.header__logo {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+}
+.header__logo .logo {
+  margin: 24px 0 0 10px;
+}
+.header__logo img {
+  width: 100%;
+}
+
+.header_logo__title {
+  display: flex;
+  flex: 1 1 auto;
+  transition-property: all;
+  transition-duration: 0.5s;
+  transition-delay: 0s;
+  transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.header_logo__title p {
+  color: white;
+  text-transform: uppercase;
+  font-size: 15pt;
+  margin: 38px 0 0 15px;
+}
+
+.header_logo__title.active {
+  margin-left: 35%;
+}
+
+@media (max-width: 700px) {
+  .header_logo__title.active {
+    margin-left: 30%;
+  }
+}
+@media (max-width: 620px) {
+  .header_logo__title.active {
+    margin-left: 25%;
+  }
+}
+@media (max-width: 420px) {
+  .header_logo__title.active {
+    margin-left: 20%;
+  }
+}
+@media (min-width: 922px) {
+  .header_logo__title.active {
+    margin-left: 0;
+  }
+}
+.menu__burger {
+  transition: 800ms;
+  display: none;
+  width: 30px;
+  height: 25px;
+  position: relative;
+  top: -65px;
+  left: 90%;
+  z-index: 15;
+}
+.menu__burger span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  position: absolute;
+  z-index: 15;
+  bottom: 12px;
+  transition: all 500ms ease 0s;
+}
+.menu__burger:before, .menu__burger:after {
+  content: "";
+  z-index: 6;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  position: absolute;
+  transition: all 500ms ease 0s;
+}
+.menu__burger:after {
+  position: absolute;
+  bottom: 0;
+}
+
+.menu__burger.active:before {
+  top: 10px;
+  transform: rotate(45deg);
+}
+.menu__burger.active:after {
+  bottom: 12px;
+  transform: rotate(-45deg);
+}
+.menu__burger.active span {
+  transform: scale(0);
+}
+
+@media (max-width: 920px) {
+  .menu__burger {
+    display: block;
+  }
+
+  .wrap-header {
+    flex-direction: column;
+  }
+  .wrap-header .header_logo__title {
+    z-index: 13;
+    margin-bottom: 60px;
+  }
+
+  .adaptive_menu {
+    position: fixed;
+    display: flex;
+    flex: 1 1 auto;
+    width: 100%;
+    height: 100%;
+    top: -120%;
+    z-index: 10;
+    background: black;
+    transition: 500ms;
+  }
+
+  .adaptive_menu.active {
+    top: 0;
+  }
+}
+@media (max-width: 500px) {
+  .adaptive_menu {
+    height: 120%;
+  }
+
+  .menu__burger {
+    left: 85%;
+  }
+}
+.nav {
+  display: flex;
+  height: 100%;
+}
+.nav__item {
+  position: relative;
+  border-radius: 5px;
+  color: white;
+  margin: 10px;
+  padding: 10px;
+  width: 100px;
+  transition: 400ms;
+}
+.nav__item:hover {
+  box-shadow: 0 0 10px white;
+}
+.nav__item .nav__item-img {
+  margin: 0 auto;
+  width: 40px;
+  height: 40px;
+}
+.nav__item .nav__item-img img {
+  width: 100%;
+}
+.nav__item .nav__item-title {
+  text-align: center;
+  font-size: 15pt;
+}
+
+@media (max-width: 920px) {
+  .nav {
+    flex-direction: column;
+    margin-top: 20px;
+  }
+  .nav__item {
+    width: 100%;
+    position: absolute;
+    opacity: 1;
+    top: -120%;
+    margin: 0 auto;
+    padding: 10px;
+    z-index: 11;
+  }
+  .nav__item.active {
+    margin-top: 20px;
+    transition-property: all;
+    transition-duration: 0.8s;
+    transition-delay: 0s;
+    transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    top: 0;
+    opacity: 1;
+    position: relative;
+  }
+  .nav__item.active::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: white;
+    transition: 800ms;
+  }
+  .nav__item.active:hover {
+    box-shadow: 0 0 0 white;
+  }
+  .nav__item.active:hover::after {
+    background: brown;
+  }
+}
+
+/*# sourceMappingURL=header.component.css.map */

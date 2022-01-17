@@ -1,0 +1,25 @@
+<div class="card-goods" >
+  <div class="card-goods__img">
+    <img src="{{good.image}}" alt="">
+  </div>
+  <div class="card-goods__title">
+    <p>{{good.name}}</p>
+  </div>
+  <div class="card-goods__description">
+    <p>{{good.name}}</p>
+  </div>
+  <div class="card-goods__pay">
+    <div class="goods__pay-price">
+      <p>{{good.price}}₴</p>
+    </div>
+    <div class="goods__pay-count">
+      <div class="minus"><span></span></div>
+      <input min="1" maxlength="3"  name="" id="" cols="2" rows="1">
+      <div class="plus" ><span></span>
+      </div>
+    </div>
+  </div>
+  <div class="goods__pay-button">
+    <button [disabled]="false">Add to basket</button>
+  </div>
+</div>
