@@ -1,33 +1,33 @@
-.card-goods__img {
+.card-stores__img {
   overflow: hidden;
   transition: 500ms;
   padding: 30px;
-  min-height: 200px;
+  height: 30rem;
 }
-.card-goods__img img {
+.card-stores__img img {
   transition: 500ms;
   width: 100%;
 }
 
-.card-goods {
+.card-stores {
   padding-bottom: 20px;
   transition: 500ms;
 }
-.card-goods .card-goods__img img:hover {
+.card-stores .card-stores__img img:hover {
   transform: scale(1.2);
 }
-.card-goods:hover {
+.card-stores:hover {
   box-shadow: 0 0 5px #4f4f4f;
 }
 
-.card-goods__title p {
+.card-stores__title p {
   padding-top: 20px;
   text-align: center;
   font-size: 20pt;
   font-weight: 700;
 }
 
-.card-goods__description p {
+.card_stores__description p {
   font-family: "Roboto", sans-serif;
   padding: 10px;
   font-size: 11pt;
@@ -35,37 +35,37 @@
   color: rgba(0, 0, 0, 0.5);
 }
 
-.card-goods__pay {
+.card-stores__pay {
   display: flex;
   justify-content: center;
   margin: 5px 0;
 }
-.card-goods__pay .goods__pay-price {
+.card-stores__pay .stores__pay-price {
   font-size: 20pt;
   color: brown;
 }
-.card-goods__pay .goods__pay-count {
+.card-stores__pay .stores__pay-count {
   display: flex;
   margin: 0 0 0 20px;
 }
-.card-goods__pay .goods__pay-count input {
+.card-stores__pay .stores__pay-count input {
   border: solid 0.5px rgba(0, 0, 0, 0.2);
   width: 30px;
   text-align: center;
   margin-bottom: 3px;
 }
-.card-goods__pay .plus {
+.card-stores__pay .plus {
   display: block;
   width: 20px;
   height: 20px;
 }
-.card-goods__pay .minus {
+.card-stores__pay .minus {
   display: block;
   position: relative;
   width: 15px;
   height: 15px;
 }
-.card-goods__pay .minus span {
+.card-stores__pay .minus span {
   display: block;
   border-radius: 1px;
   width: 100%;
@@ -75,13 +75,13 @@
   right: 2px;
   background: #000;
 }
-.card-goods__pay .plus {
+.card-stores__pay .plus {
   display: block;
   position: relative;
   width: 15px;
   height: 15px;
 }
-.card-goods__pay .plus span {
+.card-stores__pay .plus span {
   display: block;
   border-radius: 1px;
   width: 100%;
@@ -91,7 +91,7 @@
   left: 2px;
   background: #000;
 }
-.card-goods__pay .plus::before {
+.card-stores__pay .plus::before {
   content: "";
   display: block;
   position: absolute;

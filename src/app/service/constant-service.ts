@@ -1,4 +1,6 @@
 export class ConstantService {
-  readonly subscriptionServiceURL: string =  'http://localhost:8082';
-  readonly goodsServiceURL: string =  'http://localhost:8084';
+  private readonly defaultURL: string = 'http://localhost:8080';
+  readonly authServiceURL: string = this.defaultURL + '/auth';
+  readonly subscriptionServiceURL: string = this.defaultURL +  '/subscription';
+  readonly goodsServiceURL: string = this.defaultURL + '/main';
 }

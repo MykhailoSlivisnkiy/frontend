@@ -4,8 +4,25 @@
   justify-content: space-around;
 }
 
+.subscription-header {
+  text-align: center;
+  margin-bottom: 5%;
+  font-size: 20pt;
+}
+
+.chosen-subscription {
+  background-color: #9cd0fd;
+}
+
 .image {
   width: 150px;
+}
+
+.subscribe-buttons-wrapper {
+  display: block;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .subscribe-buttons {
@@ -17,6 +34,17 @@
 
 .subscribe-button {
   margin-left: 5px;
+}
+
+.subscribe-choice {
+  padding-bottom: 20px;
+}
+.subscribe-choice img:hover {
+  transform: scale(1.2);
+  transition: all 0.1s ease-in;
+}
+.subscribe-choice:hover {
+  box-shadow: 0 0 5px #4f4f4f;
 }
 
 /*# sourceMappingURL=subscribe-module.component.css.map */

@@ -1,0 +1,96 @@
+<div class="edit-form-container">
+  <div class="edit-form-header">
+    Edit shop
+  </div>
+  <form class="login-form" [formGroup]="editForm" (ngSubmit)='saveChanges()'>
+    <mat-grid-list cols="2" rowHeight="3:1">
+      <mat-grid-tile>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Name</mat-label>
+          <input type="text" formControlName="name" matInput placeholder="simple text">
+          <mat-error *ngIf="editForm.hasError('required')">
+            Field <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Phone</mat-label>
+          <input type="text" formControlName="phone" matInput placeholder="simple text">
+          <mat-error *ngIf="editForm.hasError('required')">
+            Field <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Country</mat-label>
+          <input type="text" formControlName="country" matInput placeholder="Ukraine">
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>City</mat-label>
+          <input type="text" formControlName="city" matInput placeholder="Lviv">
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Street</mat-label>
+          <input type="text" formControlName="street" matInput placeholder="Lviv">
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Website</mat-label>
+          <input type="text" formControlName="website" matInput placeholder="https://shop.com">
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Email</mat-label>
+          <input type="text" formControlName="email" matInput placeholder="https://shop.com">
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Open Time</mat-label>
+          <mat-select formControlName="openTime">
+            <mat-option>None</mat-option>
+            <mat-option *ngFor="let item of shopAvailableTimeRange;" value="{{item}}">{{item}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Close Time</mat-label>
+          <mat-select formControlName="closeTime">
+            <mat-option>None</mat-option>
+            <mat-option *ngFor="let item of shopAvailableTimeRange;" value="{{item}}">{{item}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile *ngIf="!shopId">
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Image</mat-label>
+          <input type="text" formControlName="image" matInput>
+        </mat-form-field>
+      </mat-grid-tile>
+    </mat-grid-list>
+
+
+    <div class="button-wrapper">
+      <button class="button" mat-raised-button color="warn" (click)="closeModal()">Cancel</button>
+      <button class="button" mat-raised-button color="primary" (click)="saveChanges()">Save</button>
+    </div>
+  </form>
+</div>

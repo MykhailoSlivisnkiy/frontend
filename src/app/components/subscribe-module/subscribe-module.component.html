@@ -1,18 +1,23 @@
+<div class="subscription-header">
+  Choose your subscription
+</div>
 <div class="subscribe-choices">
-  <mat-card>
+  <mat-card class="subscribe-choice" (click)="chooseSubscriptionType('email')" id="email">
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/At_sign.svg/239px-At_sign.svg.png" alt="" class="image">
   </mat-card>
 
-  <mat-card>
-    <img src="https://st3.depositphotos.com/4141023/14403/v/600/depositphotos_144034639-stock-illustration-paper-airplane-icons-vector.jpg" alt="" class="image">
+  <mat-card class="subscribe-choice" (click)="chooseSubscriptionType('telegram')" id="telegram">
+    <img src="/assets/telegram-logo.png" alt="" class="image">
   </mat-card>
 
-  <mat-card>
-    <img src="https://thumbs.dreamstime.com/b/%D0%B7%D0%BD%D0%B0%D1%87%D0%BE%D0%BA-sms-%D1%81%D0%B8%D0%BC%D0%B2%D0%BE-%D1%82%D0%B5%D0%BA%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B3%D0%BE-%D1%81%D0%BE%D0%BE%D0%B1%D1%89%D0%B5%D0%BD%D0%B8%D1%8F-%D0%BF-%D0%BE%D1%81%D0%BA%D0%BE-79863034.jpg" alt="" class="image">
+  <mat-card class="subscribe-choice" (click)="chooseSubscriptionType('sms')" id="sms">
+    <img src="/assets/sms.png" alt="" class="image">
   </mat-card>
 </div>
 
-<div class="subscribe-buttons">
-  <button mat-raised-button color="warn" (click)="closeModal()">Close</button>
-  <button mat-raised-button color="primary" (click)="subscribe()" class="subscribe-button">Subscribe</button>
+<div class="subscribe-buttons-wrapper">
+  <div class="subscribe-buttons">
+    <button mat-raised-button color="warn" (click)="closeModal()">Close</button>
+    <button mat-raised-button color="primary" (click)="subscribe()" class="subscribe-button">Subscribe</button>
+  </div>
 </div>

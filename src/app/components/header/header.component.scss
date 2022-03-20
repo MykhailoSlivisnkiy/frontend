@@ -1,6 +1,6 @@
 @mixin header {
   width: auto;
-  height: 100px;
+  height: 75px;
   background: #2f2424;
   display: flex;
 }
@@ -35,12 +35,12 @@
 
 .header__logo {
   width: 50px;
-  height: 50px;
+  height: 15px;
   display: flex;
   flex-direction: column;
 
   .logo {
-    margin: 24px 0 0 10px;
+    margin: 15px 0 0 10px;
   }
 
   img {
@@ -60,7 +60,7 @@
     color: white;
     text-transform: uppercase;
     font-size: 15pt;
-    margin: 38px 0 0 15px;
+    margin: 30px 0 0 25px;
   }
 }
 
@@ -188,15 +188,17 @@
 
 .nav {
   display: flex;
-  height: 100%;
+  height: 75%;
+  margin-top: 20px;
 
   &__item {
     position: relative;
     border-radius: 5px;
     color: white;
     margin: 10px;
-    padding: 10px;
+    padding: 0 10px 10px 10px;
     width: 100px;
+    margin-top: -5px;
     transition: 400ms;
 
     &:hover {
@@ -206,7 +208,7 @@
     .nav__item-img {
       margin: 0 auto;
       width: 40px;
-      height: 40px;
+      margin-top: -15px;
 
       img {
         width: 100%;
@@ -216,6 +218,7 @@
     .nav__item-title {
       text-align: center;
       font-size: 15pt;
+      margin-top: -5px;
     }
   }
 }
@@ -232,7 +235,7 @@
       opacity: 1;
       top: -120%;
       margin: 0 auto;
-      padding: 10px;
+      padding: 0 10px 10px 10px;
       z-index: 11;
     }
 

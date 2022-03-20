@@ -6,7 +6,30 @@
       <div fxLayout="row wrap" fxLayoutGap="0 grid">
         <app-good-card fxFlex.gt-sm="33%" fxFlex.gt-xs="50%" *ngFor="let good of goods" [good]="good"></app-good-card>
       </div>
+      <div class="card-footer pb-0 pt-3">
+
+        <div class="pagination-nav">
+          <ul *ngIf="pager.content && pager.content.length" class="pagination">
+            <li [ngClass]="{disabled:pager.pageable.pageNumber === 0}" class="page-item first-item">
+              <a (click)="setPage(0)" class="page-link">First</a>
+            </li>
+            <li [ngClass]="{disabled:pager.pageable.pageNumber === 0}" class="page-item previous-item">
+              <a (click)="setPage(pager.pageable.pageNumber - 1)" class="page-link">Previous</a>
+            </li>
+            <li *ngFor="let page of listOfPages" [ngClass]="{active:pager.pageable.pageNumber === page}" class="page-item number-item">
+              <a (click)="setPage(page)" class="page-link">{{page + 1}}</a>
+            </li>
+            <li [ngClass]="{disabled:pager.pageable.pageNumber + 1 === pager.totalPages}" class="page-item next-item">
+              <a (click)="setPage(pager.pageable.pageNumber + 1)" class="page-link">Next</a>
+            </li>
+            <li [ngClass]="{disabled:pager.pageable.pageNumber + 1 === pager.totalPages}" class="page-item last-item">
+              <a (click)="setPage(pager.totalPages - 1)" class="page-link">Last</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
-    <button mat-raised-button color="primary" style="display: block; margin: auto">Add new clothes</button>
+
+    <button mat-raised-button color="primary" style="display: block; margin: auto" (click)="addNewGoods()">Add new clothes</button>
   </div>
 </div>

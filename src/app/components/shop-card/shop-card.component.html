@@ -1,14 +1,14 @@
-<div class="card-goods" >
-  <div class="card-goods__img">
+<div class="card-stores" >
+  <div class="card-stores__img">
     <img src="{{shop.image}}" alt="" (click)="openShop()">
   </div>
-  <div class="card-goods__title">
+  <div class="card-stores__title">
     <p>{{shop.name}}</p>
   </div>
-  <div class="card-goods__description">
+  <div class="card_stores__description">
     <p>{{shop.name}}</p>
   </div>
   <div class="goods__pay-button">
-    <button [disabled]="false" (click)="subscribe(shop.name)">Subscribe</button>
+    <button [disabled]="false" (click)="subscribe()">Subscribe</button>
   </div>
 </div>

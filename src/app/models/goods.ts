@@ -3,7 +3,8 @@ export class Goods {
     public name: string,
     public image: string,
     public count: number,
-    public price: number
+    public price: number,
+    public shopId?: number
   ) {
   }
 }

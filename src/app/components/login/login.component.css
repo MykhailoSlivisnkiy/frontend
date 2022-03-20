@@ -1,0 +1,94 @@
+.container {
+  background-image: url("../../../assets/background_1.png");
+  height: 93%;
+  width: 100%;
+  position: absolute;
+}
+
+mat-icon {
+  margin-bottom: 20px;
+}
+
+.form-wrapper {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  max-width: 1400px;
+  margin: auto;
+  color: white;
+  font-size: 35pt;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-form {
+  width: 500px;
+  background: white;
+  margin: 20% auto 0 auto;
+  box-shadow: 0 0 10px white;
+  border: solid 1px rgba(0, 0, 0, 0.5);
+}
+.login-form p {
+  padding: 20px 0 20px 0;
+  color: black;
+}
+
+mat-form-field {
+  color: black;
+  width: 90%;
+  font-size: 10pt;
+}
+.button-login {
+  transition: 300ms;
+  width: 50%;
+  height: 40px;
+  margin-bottom: 20px;
+  background: #660909;
+  color: white;
+  font-size: 15pt;
+  border-radius: 10px;
+}
+
+.button2 {
+  background: brown;
+}
+.button2:hover {
+  background: white;
+  color: brown;
+  box-shadow: 0 0 10px brown;
+  width: 60%;
+  transition-property: all;
+  transition-duration: 0.5s;
+  transition-delay: 0s;
+  transition-timing-function: cubic-bezier(0.75, -1, 0.21, -1);
+}
+
+.signup {
+  color: black;
+  font-size: 13pt;
+  font-weight: 300;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+  position: relative;
+}
+.signup .signup-click {
+  transition: 300ms;
+  color: brown;
+  margin-left: 20px;
+}
+.signup .signup-click:hover {
+  transition: 300ms;
+  border-bottom: 1px solid brown;
+}
+
+.error {
+  margin-top: -40px;
+}
+.error span {
+  font-size: 10pt;
+  color: brown;
+}
+
+/*# sourceMappingURL=login.component.css.map */

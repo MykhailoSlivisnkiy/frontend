@@ -1,0 +1,101 @@
+<div class="container">
+  <div class="form-wrapper">
+    <form *ngIf="!showForm" class="login-form" [formGroup]="loginForm" (ngSubmit)='onSubmit()'>
+      <p>Login</p>
+
+      <mat-form-field class="example-full-width logins" appearance="outline">
+        <mat-label>Email</mat-label>
+        <input type="email" formControlName="login"  matInput placeholder="test@gmail.com">
+        <mat-error *ngIf="login.hasError('required')">
+          Login is <strong>required</strong>
+        </mat-error>
+        <mat-error *ngIf="login.hasError('validateOnCorrectPasswordLogin')">
+          Login is <strong>Incorrect</strong>
+        </mat-error>
+      </mat-form-field>
+
+
+      <mat-form-field appearance="outline">
+        <mat-label>Enter your password</mat-label>
+        <input formControlName="password" matInput [type]="hide ? 'password' : 'text'" maxlength="70">
+        <div matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+             [attr.aria-pressed]="hide">
+          <mat-icon>
+            <img *ngIf="!hide" src="./assets/img/eye_visible_hide.svg" alt="">
+            <img *ngIf="hide" src="./assets/img/eye_slash_visible.svg" alt=""></mat-icon>
+        </div>
+        <mat-error *ngIf="password.hasError('required')">
+          Password is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <div *ngIf="showError" class="error">
+        <span>Your password or email are incorrect</span>
+      </div>
+      <button *ngIf="!showForm" class="button-login" type="submit" [ngClass]="{button2: loginForm.valid}"
+              [disabled]="!loginForm.valid">
+        Login
+      </button>
+
+
+      <div class="signup">
+        <span>Not a member?</span>
+        <div (click)="showForm = true" class="signup-click">Signup now</div>
+      </div>
+
+    </form>
+
+
+    <form *ngIf="showForm" class="login-form" [formGroup]="signupForm" (ngSubmit)='onSubmitSignup()'>
+      <p>Signup</p>
+
+      <mat-form-field class="example-full-width logins" appearance="outline">
+        <mat-label>Email</mat-label>
+        <input
+          type="email" formControlName="login" matInput placeholder="test@gmail.com">
+        <mat-error *ngIf="signUpLogin.hasError('required')">
+          Login is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width logins" appearance="outline">
+        <mat-label>Name</mat-label>
+        <input
+          type="text" formControlName="name" maxlength="50" matInput placeholder="Jhon">
+        <mat-error *ngIf="signUpName.hasError('required')">
+          Name is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Enter your password</mat-label>
+        <input formControlName="password" matInput [type]="hide ? 'password' : 'text'" maxlength="70">
+        <div matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+             [attr.aria-pressed]="hide">
+          <mat-icon>
+            <img *ngIf="!hide" src="./assets/img/eye_visible_hide.svg" alt="">
+            <img *ngIf="hide" src="./assets/img/eye_slash_visible.svg" alt=""></mat-icon>
+        </div>
+        <mat-error *ngIf="signUpPassword.hasError('required')">
+          Password is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+
+      <div *ngIf="!failSignUp" class="error">
+        <span>Such a user already exists</span>
+      </div>
+
+      <button *ngIf="showForm" class="button-login" type="submit" [ngClass]="{button2: signupForm.valid}"
+              [disabled]="!signupForm.valid">
+        <span>Sign-up</span>
+      </button>
+
+      <div class="signup">
+        <span>Already have an account? </span>
+        <div (click)="showForm = false" class="signup-click">Login</div>
+      </div>
+
+    </form>
+  </div>
+</div>

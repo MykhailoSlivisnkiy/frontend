@@ -35,4 +35,9 @@
   color: crimson;
 }
 
+.pagination-nav {
+  display: flex;
+  justify-content: center;
+}
+
 /*# sourceMappingURL=goods.component.css.map */

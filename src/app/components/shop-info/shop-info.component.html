@@ -2,40 +2,81 @@
   <mat-card-content layout="row" layout-align="space-between">
     <div class="shop-info">
       <img src="{{shop.image}}" alt="" class="logo-icon">
-      <mat-card class="shop-info-detail">
-        <form class="example-form">
-          <div class="shop-info-fields">
-            <mat-form-field class="example-full-width" appearance="fill">
-              <mat-label>Name</mat-label>
-              <input matInput placeholder="Ex. Pizza" value={{shop.name}} disabled>
-            </mat-form-field>
+      <div class="shop-info-detail-wrapper">
+        <div class="shop-info-detail">
+          <div class="shop-info-detail-fields">
+            <div class="shop-info-fields-column">
+              <div class="shop-info-fields-row">
+                <mat-form-field appearance="fill">
+                  <mat-label>Name</mat-label>
+                  <input matInput value={{shop.name}} disabled>
+                </mat-form-field>
 
-            <mat-form-field class="example-full-width" appearance="fill">
-              <mat-label>Name</mat-label>
-              <input matInput placeholder="Ex. Pizza" value={{shop.name}} disabled>
-            </mat-form-field>
+                <mat-form-field appearance="fill">
+                  <mat-label>Type</mat-label>
+                  <input matInput value={{shop.type}} disabled>
+                </mat-form-field>
 
-            <mat-form-field class="example-full-width" appearance="fill">
-              <mat-label>Name</mat-label>
-              <input matInput placeholder="Ex. Pizza" value={{shop.name}} disabled>
-            </mat-form-field>
+                <mat-form-field appearance="fill">
+                  <mat-label>Phone</mat-label>
+                  <input matInput value={{shop.phone}} disabled>
+                </mat-form-field>
+              </div>
 
-            <mat-form-field class="example-full-width" appearance="fill">
-              <mat-label>Name</mat-label>
-              <input matInput placeholder="Ex. Pizza" value={{shop.name}} disabled>
-            </mat-form-field>
+              <div class="shop-info-fields-row">
+                <mat-form-field appearance="fill">
+                  <mat-label>Country</mat-label>
+                  <input matInput value={{shop.country}} disabled>
+                </mat-form-field>
 
-            <mat-form-field class="example-full-width" appearance="fill">
-              <mat-label>Name</mat-label>
-              <input matInput placeholder="Ex. Pizza" value={{shop.name}} disabled>
-            </mat-form-field>
+                <mat-form-field appearance="fill">
+                  <mat-label>City</mat-label>
+                  <input matInput value={{shop.city}} disabled>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                  <mat-label>Street</mat-label>
+                  <input matInput value={{shop.street}} disabled>
+                </mat-form-field>
+              </div>
+
+            <div class="shop-info-fields-row">
+                <mat-form-field appearance="fill">
+                  <mat-label>Website</mat-label>
+                  <input matInput value={{shop.website}} type="url" disabled>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                  <mat-label>Open Time</mat-label>
+                  <input matInput value={{shop.openTime}} disabled>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                  <mat-label>Close Time</mat-label>
+                  <input matInput value={{shop.closeTime}} disabled>
+                </mat-form-field>
+              </div>
+
+            </div>
           </div>
 
+          <div class="shop-info-detail-map">
+<!--            <img style="width: 100%" src="https://docs.microsoft.com/ru-ru/azure/azure-maps/media/migrate-google-maps-web-app/google-maps-marker.png">-->
+            <agm-map style="height: 400px" [latitude]="shopLatitude" [longitude]="shopLongitude">
+
+            </agm-map>
+          </div>
+        </div>
+
+        <div class="subscribe-button-wrapper">
           <div class="subscribe-button">
-            <button mat-raised-button color="warn" (click)="openModal()">Subscribe</button>
+            <button class="button" mat-raised-button color="primary" (click)="openEditModal()">Edit</button>
+            <button class="button" mat-raised-button color="primary">Add to favorite</button>
+            <button class="button" *ngIf="!isUserSubscribed" mat-raised-button color="warn" (click)="openSubscribeModal()">Subscribe</button>
+            <button class="button" *ngIf="isUserSubscribed" mat-raised-button color="warn" (click)="unsubscribe()">Unsubscribe</button>
           </div>
-        </form>
-      </mat-card>
+        </div>
+      </div>
     </div>
   </mat-card-content>
 </mat-card>

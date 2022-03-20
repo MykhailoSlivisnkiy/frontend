@@ -1,8 +1,8 @@
-.card-goods__img {
+.card-stores__img {
   overflow: hidden;
   transition: 500ms;
   padding: 30px;
-  min-height: 200px;
+  height: 30rem;
 
   img {
     transition: 500ms;
@@ -10,11 +10,11 @@
   }
 }
 
-.card-goods {
+.card-stores {
   padding-bottom: 20px;
   transition: 500ms;
 
-  .card-goods__img {
+  .card-stores__img {
     img {
       &:hover {
         transform: scale(1.2);
@@ -27,7 +27,7 @@
   }
 }
 
-.card-goods__title {
+.card-stores__title {
   p {
     padding-top: 20px;
     text-align: center;
@@ -36,7 +36,7 @@
   }
 }
 
-.card-goods__description {
+.card_stores__description {
   p {
     font-family: 'Roboto', sans-serif;
     padding: 10px;
@@ -46,17 +46,17 @@
   }
 }
 
-.card-goods__pay {
+.card-stores__pay {
   display: flex;
   justify-content: center;
   margin: 5px 0;
 
-  .goods__pay-price {
+  .stores__pay-price {
     font-size: 20pt;
     color: brown;
   }
 
-  .goods__pay-count {
+  .stores__pay-count {
     display: flex;
     margin: 0 0 0 20px;
 
@@ -146,3 +146,4 @@
     }
   }
 }
+
