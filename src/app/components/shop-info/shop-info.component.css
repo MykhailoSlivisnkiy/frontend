@@ -1,6 +1,7 @@
 .wrap-shop-info {
   margin: 2%;
   width: 95%;
+  min-height: 490px;
 }
 
 .logo-icon {

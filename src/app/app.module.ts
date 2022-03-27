@@ -28,6 +28,7 @@ import { EditModuleComponent } from './components/edit-module/edit-module.compon
 import {MatGridListModule} from "@angular/material/grid-list";
 import {MatSelectModule} from "@angular/material/select";
 import {JwPaginationModule} from "jw-angular-pagination";
+import { MyShopsComponent } from './components/my-shops/my-shops.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import {JwPaginationModule} from "jw-angular-pagination";
     routingComponents,
     SubscribeModuleComponent,
     EditModuleComponent,
+    MyShopsComponent,
   ],
   imports: [
     JwPaginationModule,

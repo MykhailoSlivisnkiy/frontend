@@ -15,6 +15,14 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  goToMain() {
+    this.route.navigate(['shop']);
+  }
+
+  goToMyShops() {
+    this.route.navigate(['my-shops']);
+  }
+
   authAction() {
 
     if (this.authService.isUserLoggedIn) {

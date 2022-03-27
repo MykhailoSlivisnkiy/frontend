@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import {Shop} from "../../models/shop";
+import {Page} from "../../models/page";
+import {ActivatedRoute, Router} from "@angular/router";
 import {ShopService} from "../../service/shop.service";
 import {MatDialog, MatDialogConfig} from "@angular/material/dialog";
 import {EditModuleComponent} from "../edit-module/edit-module.component";
-import {Page} from "../../models/page";
-import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
-  selector: 'app-shops',
-  templateUrl: './shops.component.html',
-  styleUrls: ['./shops.component.scss']
+  selector: 'app-my-shops',
+  templateUrl: './my-shops.component.html',
+  styleUrls: ['./my-shops.component.scss']
 })
-export class ShopsComponent implements OnInit {
+export class MyShopsComponent implements OnInit {
 
   shops: Shop[] = [];
   isShopsEmpty: boolean = false;
@@ -48,17 +48,17 @@ export class ShopsComponent implements OnInit {
 
   setPage(filter: string, page: number) {
 
-    if(page < 0 || page >= this.pager?.totalPages) {
-      return;
-    }
+    // if(page < 0 || page >= this.pager?.totalPages) {
+    //   return;
+    // }
 
-    this.goodsService.getAllShops(page, filter)
-      .subscribe((data: Page) => {
-        this.shops = data.content;
+    this.goodsService.getAllFavorite(localStorage.getItem('access_token'))
+      .subscribe((data: Shop[]) => {
         this.pager = data;
-        this.numberOfPages = this.pager.totalPages;
+        this.numberOfPages =0;
+        this.shops = data;
 
-        this.listOfPages = Array(this.numberOfPages).fill(0).map((x, i) => (i));
+        // this.listOfPages = Array(this.numberOfPages).fill(0).map((x, i) => (i));
 
 
         this.isShopsEmpty = true;
@@ -71,4 +71,5 @@ export class ShopsComponent implements OnInit {
 
     this.setPage(filter, 0);
   }
+
 }

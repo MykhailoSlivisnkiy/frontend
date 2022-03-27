@@ -11,7 +11,8 @@ export class Shop {
     public image?: string,
     public email?: string,
     public openTime?: string,
-    public closeTime?: string
+    public closeTime?: string,
+    public isSubscribed?: boolean
   ) {
   }
 }

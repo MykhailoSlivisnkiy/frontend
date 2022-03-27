@@ -1,11 +1,7 @@
 <div class="wrap-goods">
   <div class="header-container">
-    <button class="button" mat-raised-button color="warn" (click)="createNewShop()">New</button>
-    <span class="header-container-filter">
-      <button mat-stroked-button color="primary" (click)="changeFilter('All')">All</button>
-      <button mat-stroked-button color="primary" (click)="changeFilter('Second-hand')">Second Hands</button>
-      <button mat-stroked-button color="primary" (click)="changeFilter('Shop')">Shops</button>
-    </span>
+    <button mat-stroked-button color="primary" (click)="changeFilter('All')">Favorite</button>
+    <button mat-stroked-button color="primary" (click)="changeFilter('Second-hand')">Subscribed</button>
   </div>
   <div class="content">
     <h1 class="goods__title">Shops</h1>

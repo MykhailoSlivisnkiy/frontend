@@ -9,6 +9,7 @@
     <p>{{shop.name}}</p>
   </div>
   <div class="goods__pay-button">
-    <button [disabled]="false" (click)="subscribe()">Subscribe</button>
+    <button *ngIf="!shop.isSubscribed" [disabled]="false" (click)="subscribe()">Subscribe</button>
+    <button *ngIf="shop.isSubscribed" [disabled]="false" (click)="subscribe()" style="background-color: #5c97c7">Unsubscribe</button>
   </div>
 </div>

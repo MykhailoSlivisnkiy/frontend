@@ -172,7 +172,7 @@
   color: white;
   margin: 10px;
   padding: 0 10px 10px 10px;
-  width: 100px;
+  width: 130px;
   margin-top: -5px;
   transition: 400ms;
 }
@@ -190,7 +190,7 @@
 .nav__item .nav__item-title {
   text-align: center;
   font-size: 15pt;
-  margin-top: -5px;
+  margin-top: 5px;
 }
 
 @media (max-width: 920px) {

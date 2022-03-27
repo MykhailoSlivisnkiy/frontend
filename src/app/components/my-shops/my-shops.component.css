@@ -1,21 +1,19 @@
 .wrap-goods {
   max-width: 1400px;
   margin: 150px auto 0 auto;
-
-  .goods__title {
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 35pt;
-    text-transform: uppercase;
-    font-weight: 700;
-    letter-spacing: 5px;
-  }
-
-  .content {
-    padding: 16px;
-  }
+}
+.wrap-goods .goods__title {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 35pt;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 5px;
+}
+.wrap-goods .content {
+  padding: 16px;
 }
 
 .redCircle {
@@ -30,7 +28,7 @@
 
 .no_shops {
   text-align: center;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   padding: 20% 20px;
   font-size: 30pt;
   vertical-align: center;
@@ -52,3 +50,5 @@
   width: 30rem;
   justify-content: space-between;
 }
+
+/*# sourceMappingURL=my-shops.component.css.map */

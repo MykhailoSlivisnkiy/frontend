@@ -5,6 +5,7 @@ import {ShopService} from "../../service/shop.service";
 import {MatDialog, MatDialogConfig} from "@angular/material/dialog";
 import {SubscribeModuleComponent} from "../subscribe-module/subscribe-module.component";
 import {EditModuleComponent} from "../edit-module/edit-module.component";
+import {FavoriteShop} from "../../models/favorite-shop";
 
 @Component({
   selector: 'app-shop-info',
@@ -55,6 +56,14 @@ export class ShopInfoComponent implements OnInit {
 
   unsubscribe() {
     this.shopService.unsubscribe(localStorage.getItem('accessToken'), this.shopId).subscribe(response => this.isUserSubscribed = response.isUserSubscribed);
+  }
+
+  addToFavorite() {
+
+    const favorite = new FavoriteShop(this.shopId, localStorage.getItem('accessToken'));
+
+    console.log('shop ' + JSON.stringify(this.shopId));
+    this.shopService.addToFavorite(new FavoriteShop(this.shopId, localStorage.getItem('accessToken'))).subscribe();
   }
 
   private getUserSubscriptionInfo() {

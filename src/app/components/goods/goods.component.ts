@@ -2,8 +2,8 @@ import {Component, Input, OnInit} from '@angular/core';
 import {Goods} from "../../models/goods";
 import {GoodsService} from "../../service/goods.service";
 import {TestService} from "../../service/test.service";
-import {GoodsPageResponse} from "../../models/goods-page-response";
 import {ActivatedRoute, Router} from "@angular/router";
+import {Page} from "../../models/page";
 
 @Component({
   selector: 'app-goods',
@@ -17,7 +17,7 @@ export class GoodsComponent implements OnInit {
   pageOfItems: Array<any> = [];
   isGoodsListEmpty: boolean = false;
 
-  pager: any = {}; //TODO: replace with module
+  pager: Page | any;
   listOfPages: number[] = [];
   numberOfPages: number = 0;
   pageNumber: number = 0;
@@ -47,12 +47,13 @@ export class GoodsComponent implements OnInit {
 
   setPage(page: number) {
 
-    if(page < 0 || page >= this.pager.totalPages) {
+    if(page < 0 || page >= this.pager?.totalPages) {
       return;
     }
 
     this.goodsService.getGoodsByShop(this.shopId, page)
-      .subscribe((data: GoodsPageResponse) => {
+      .subscribe((data: Page) => {
+        // @ts-ignore
         this.goods = data.content;
         this.pager = data;
         this.numberOfPages = this.pager.totalPages;

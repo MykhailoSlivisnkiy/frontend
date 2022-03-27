@@ -17,6 +17,7 @@ export class ShopCardComponent implements OnInit {
   constructor(private service: SubscribeService, private router: Router, private authService: AuthService) { }
 
   ngOnInit(): void {
+    console.log('sub ' + JSON.stringify(this.shop));
   }
 
   subscribe() {

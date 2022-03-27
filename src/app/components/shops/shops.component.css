@@ -35,4 +35,20 @@
   color: crimson;
 }
 
+.pagination-nav {
+  display: flex;
+  justify-content: center;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-container-filter {
+  display: flex;
+  width: 30rem;
+  justify-content: space-between;
+}
+
 /*# sourceMappingURL=shops.component.css.map */

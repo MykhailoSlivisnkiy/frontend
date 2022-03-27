@@ -71,7 +71,7 @@
         <div class="subscribe-button-wrapper">
           <div class="subscribe-button">
             <button class="button" mat-raised-button color="primary" (click)="openEditModal()">Edit</button>
-            <button class="button" mat-raised-button color="primary">Add to favorite</button>
+            <button class="button" mat-raised-button color="primary" (click)="addToFavorite()">Add to favorite</button>
             <button class="button" *ngIf="!isUserSubscribed" mat-raised-button color="warn" (click)="openSubscribeModal()">Subscribe</button>
             <button class="button" *ngIf="isUserSubscribed" mat-raised-button color="warn" (click)="unsubscribe()">Unsubscribe</button>
           </div>

@@ -7,18 +7,27 @@
     <p>Second Hand</p>
   </div>
 
-  <a>
-    <div class="nav">
-      <div class="nav__item">
-        <div class="nav__item-img">
-          <img src="./assets/img/scooter.svg" alt="">
-        </div>
-        <div class="nav__item-title">
-          <p>Delivery</p>
-        </div>
+  <div class="nav">
+    <div class="nav__item">
+      <div class="nav__item-img">
+        <img src="./assets/img/scooter.svg" alt="">
+      </div>
+      <div class="nav__item-title" (click)="goToMain()">
+        <p>Main</p>
       </div>
     </div>
-  </a>
+  </div>
+
+  <div class="nav">
+    <div class="nav__item">
+      <div class="nav__item-img">
+        <img src="./assets/img/scooter.svg" alt="">
+      </div>
+      <div class="nav__item-title" (click)="goToMyShops()">
+        <p>My Shops</p>
+      </div>
+    </div>
+  </div>
 
   <div class="nav">
     <div class="nav__item">
