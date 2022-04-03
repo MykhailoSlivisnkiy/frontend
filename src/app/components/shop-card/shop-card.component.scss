@@ -125,25 +125,8 @@
 }
 
 .goods__pay-button {
-  width: 200px;
+  width: 110px;
   height: 30px;
   margin: 0 auto;
-
-  button {
-    transition: 200ms;
-    border: 2px solid brown;
-    color: white;
-    font-size: 13pt;
-    border-radius: 5px;
-    background: brown;
-    height: 100%;
-    width: 100%;
-
-    &:hover {
-      background: white;
-      color: brown;
-      box-shadow: 0 0 5px black;
-    }
-  }
 }
 

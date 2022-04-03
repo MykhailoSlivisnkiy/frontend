@@ -19,6 +19,7 @@ export class ShopInfoComponent implements OnInit {
   shopLongitude = 7.809007;
 
   isUserSubscribed: boolean | undefined;
+  isUserFavorite: boolean | undefined;
 
   constructor(private route: ActivatedRoute, private shopService: ShopService, private matDialog: MatDialog) {
   }
@@ -60,14 +61,19 @@ export class ShopInfoComponent implements OnInit {
 
   addToFavorite() {
 
-    const favorite = new FavoriteShop(this.shopId, localStorage.getItem('accessToken'));
+    this.shopService.addToFavorite(new FavoriteShop(this.shopId, localStorage.getItem('accessToken'))).subscribe(res => this.isUserFavorite = true);
+  }
 
-    console.log('shop ' + JSON.stringify(this.shopId));
-    this.shopService.addToFavorite(new FavoriteShop(this.shopId, localStorage.getItem('accessToken'))).subscribe();
+  deleteFavoriteShop() {
+
+    this.shopService.deleteFavorite(new FavoriteShop(this.shopId, localStorage.getItem('accessToken'))).subscribe(res => this.isUserFavorite = false);
   }
 
   private getUserSubscriptionInfo() {
-    this.shopService.getUserShopSubscriptionInfo(localStorage.getItem('accessToken'), this.shopId).subscribe(response => this.isUserSubscribed = response.isUserSubscribed);
+    this.shopService.getUserShopSubscriptionInfo(localStorage.getItem('accessToken'), this.shopId).subscribe(response => {
+      this.isUserSubscribed = response.isUserSubscribed;
+      this.isUserFavorite = response.isUserFavoriteShop;
+    });
   }
 
   private getShop() {

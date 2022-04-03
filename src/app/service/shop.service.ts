@@ -13,12 +13,20 @@ export class ShopService {
 
   constructor(private http: HttpClient, private constantService: ConstantService) { }
 
-  getAllShops(page: number, filter: string) {
-    return this.http.post<Page>(this.constantService.goodsServiceURL + '/shops/getAll?page=' + page + '&filter=' + filter, localStorage.getItem('accessToken'));
+  getAllShops(page: number, filter: string, name:string) {
+    return this.http.get<Page>(this.constantService.goodsServiceURL + '/shops/getAll?page=' + page + '&filter=' + filter + '&filterByName=' + name);
   }
 
-  getAllFavorite(token: string | null) {
-    return this.http.post<Shop[]>(this.constantService.goodsServiceURL + '/users/get-favorite/', localStorage.getItem('accessToken'));
+  getAllFavorite() {
+    return this.http.get<Shop[]>(this.constantService.goodsServiceURL + '/users/get-favorite/');
+  }
+
+  getAllSubscribed() {
+    return this.http.get<Shop[]>(this.constantService.goodsServiceURL + '/users/get-subscribed/');
+  }
+
+  getAllByName(filter: string, name: string) {
+    return this.http.get<Shop[]>(this.constantService.goodsServiceURL + '/shops/search/' + filter + '/' + name);
   }
 
   getShopById(id: number) {
@@ -35,6 +43,10 @@ export class ShopService {
 
   addToFavorite(shop: FavoriteShop) {
     return this.http.post<FavoriteShop>(this.constantService.goodsServiceURL + '/users', shop);
+  }
+
+  deleteFavorite(shop: FavoriteShop) {
+    return this.http.post<FavoriteShop>(this.constantService.goodsServiceURL + '/users/delete-favorite-shop', shop);
   }
 
   update(shop: string) {

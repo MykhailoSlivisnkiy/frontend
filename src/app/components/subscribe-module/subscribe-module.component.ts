@@ -10,7 +10,7 @@ import {AuthService} from "../../service/auth.service";
   styleUrls: ['./subscribe-module.component.scss']
 })
 export class SubscribeModuleComponent implements OnInit {
-  shopId: number = 0;
+  shopId: number | undefined = 0;
   shopName: string = '';
   subscribedTypes: string[] = [];
 

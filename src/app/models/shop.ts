@@ -1,6 +1,6 @@
 export class Shop {
   constructor(
-    public id?: string,
+    public id?: number,
     public name?: string,
     public type?: string,
     public phone?: string,
@@ -12,7 +12,8 @@ export class Shop {
     public email?: string,
     public openTime?: string,
     public closeTime?: string,
-    public isSubscribed?: boolean
+    public isSubscribed?: boolean,
+    public description?: string
   ) {
   }
 }

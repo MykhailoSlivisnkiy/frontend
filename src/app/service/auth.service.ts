@@ -4,6 +4,7 @@ import {Router} from "@angular/router";
 import {ConstantService} from "./constant-service";
 import {LoginResponse} from "../models/login-response";
 import {AuthUser} from "../models/authUser";
+import {SignUpUser} from "../models/sign-up-user";
 
 @Injectable({
   providedIn: 'root'
@@ -55,9 +56,21 @@ export class AuthService {
       localStorage.setItem("accessToken", response.accessToken);
       localStorage.setItem("refreshToken", response.refreshToken);
 
-      console.log('after log ' + this.isUserLoggedIn);
       this.showError = false;
-      this.router.navigateByUrl('shop');
+      this.router.navigateByUrl('shop').then(r => {});
+      //TODO: handle error
+    }, catchError => {
+      this.showError = true;
+    });
+  }
+
+  register(user: SignUpUser) {
+    return  this.http.post<LoginResponse>(this.constants.authServiceURL + '/register', user).subscribe((response) => {
+      localStorage.setItem("accessToken", response.accessToken);
+      localStorage.setItem("refreshToken", response.refreshToken);
+
+      this.showError = false;
+      this.router.navigateByUrl('shop').then(r => {});
       //TODO: handle error
     }, catchError => {
       this.showError = true;

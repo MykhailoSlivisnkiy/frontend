@@ -1,46 +1,50 @@
-.wrap-shop-info {
-  margin: 2%;
-  width: 95%;
-  min-height: 490px;
-}
-
-.logo-icon {
-  width: 25%;
-  border-radius: 5%;
-}
-
 .shop-info {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
 }
+@media (max-width: 1375px) {
+  .shop-info {
+    flex-direction: column;
+  }
+}
+
+.wrap-shop-info {
+  margin: 2%;
+  width: 96%;
+  min-height: 490px;
+}
+
+.shop-info-logo {
+  flex-grow: 1;
+  border-radius: 5%;
+  width: 5%;
+  min-width: 400px;
+  max-height: 445px;
+}
+@media (max-width: 1375px) {
+  .shop-info-logo {
+    width: 80%;
+    margin: 2% auto 5% auto;
+  }
+}
 
 .shop-info-detail-wrapper {
-  margin: 0% 0% 0% 1%;
+  flex-grow: 2;
+}
+
+.shop-info-map {
   flex-grow: 1;
 }
 
-.shop-info-detail {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-
-.shop-info-detail-fields {
-  flex: 2;
-}
-
-.shop-info-detail-map {
-  flex: 1;
+@media (max-width: 1375px) {
+  .shop-info-detail-map {
+    width: 87%;
+    margin: 10% auto 5% auto;
+  }
 }
 
 .shop-info-fields-column {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
-
-.shop-info-fields {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -52,24 +56,42 @@
   justify-content: space-around;
   margin-bottom: 3rem;
 }
+@media (max-width: 700px) {
+  .shop-info-fields-row {
+    flex-direction: column;
+  }
+}
+
+.description-field {
+  margin-left: 9%;
+  width: 82%;
+}
+.description-field .mat-form-field {
+  width: 100%;
+  height: 25px;
+}
+
+@media (max-width: 700px) {
+  .shop-info-field {
+    width: 80%;
+    margin: auto;
+  }
+  .shop-info-field mat-label {
+    font-size: 17px;
+  }
+}
 
 .subscribe-button-wrapper {
-  float: right;
-  width: 25%;
   margin-top: 1%;
 }
 
 .subscribe-button {
-  flex-direction: row;
-  align-items: flex-end;
-  margin-top: auto;
-  position: absolute;
-  right: 10px;
-  width: 301px;
+  display: flex;
+  justify-content: end;
+  margin-top: 25px;
 }
-
-.button {
-  margin: 1%;
+.subscribe-button span {
+  margin: 0 0 0 1%;
 }
 
 /*# sourceMappingURL=shop-info.component.css.map */

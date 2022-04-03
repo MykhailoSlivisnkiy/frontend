@@ -6,10 +6,10 @@
     <p>{{shop.name}}</p>
   </div>
   <div class="card_stores__description">
-    <p>{{shop.name}}</p>
+    <p>{{shop.description}}</p>
   </div>
-  <div class="goods__pay-button">
-    <button *ngIf="!shop.isSubscribed" [disabled]="false" (click)="subscribe()">Subscribe</button>
-    <button *ngIf="shop.isSubscribed" [disabled]="false" (click)="subscribe()" style="background-color: #5c97c7">Unsubscribe</button>
+  <div class="goods__pay-button" *ngIf="showSubscribedButtons">
+    <button *ngIf="!shop.isSubscribed" mat-raised-button color="primary" [disabled]="false" (click)="subscribe()">Subscribe</button>
+    <button *ngIf="shop.isSubscribed" mat-raised-button color="warn" [disabled]="false" (click)="unsubscribe()">Unsubscribe</button>
   </div>
 </div>

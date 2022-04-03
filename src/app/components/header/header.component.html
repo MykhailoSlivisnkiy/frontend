@@ -35,8 +35,8 @@
         <img src="./assets/img/enter.svg" alt="">
       </div>
       <div class="nav__item-title" (click)="authAction()">
-        <p *ngIf="!this.authService.isUserLoggedIn">login</p>
-        <p *ngIf="this.authService.isUserLoggedIn">logout</p>
+        <p *ngIf="!this.authService.isUserLoggedIn">Login</p>
+        <p *ngIf="this.authService.isUserLoggedIn">Logout</p>
       </div>
     </div>
   </div>

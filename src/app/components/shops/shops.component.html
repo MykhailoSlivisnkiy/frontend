@@ -1,11 +1,17 @@
 <div class="wrap-goods">
   <div class="header-container">
-    <button class="button" mat-raised-button color="warn" (click)="createNewShop()">New</button>
+    <mat-form-field class="search-field" appearance="fill">
+      <mat-label>Find Shop</mat-label>
+      <input matInput type="text" [(ngModel)]="filterByName" (keyup)="updateSearch($event.target)">
+    </mat-form-field>
+
     <span class="header-container-filter">
-      <button mat-stroked-button color="primary" (click)="changeFilter('All')">All</button>
-      <button mat-stroked-button color="primary" (click)="changeFilter('Second-hand')">Second Hands</button>
-      <button mat-stroked-button color="primary" (click)="changeFilter('Shop')">Shops</button>
+      <button class="header-buttons" mat-stroked-button color="primary" (click)="changeFilter('All')">All</button>
+      <button class="header-buttons" mat-stroked-button color="primary" (click)="changeFilter('Second-hand')">Second Hands</button>
+      <button class="header-buttons" mat-stroked-button color="primary" (click)="changeFilter('Shop')">Shops</button>
     </span>
+
+    <button class="button-new header-buttons" mat-raised-button color="warn" (click)="createNewShop()">New</button>
   </div>
   <div class="content">
     <h1 class="goods__title">Shops</h1>

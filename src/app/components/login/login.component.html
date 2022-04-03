@@ -46,7 +46,7 @@
     </form>
 
 
-    <form *ngIf="showForm" class="login-form" [formGroup]="signupForm" (ngSubmit)='onSubmitSignup()'>
+    <form *ngIf="showForm" class="login-form" [formGroup]="signupForm">
       <p>Signup</p>
 
       <mat-form-field class="example-full-width logins" appearance="outline">
@@ -88,7 +88,7 @@
 
       <button *ngIf="showForm" class="button-login" type="submit" [ngClass]="{button2: signupForm.valid}"
               [disabled]="!signupForm.valid">
-        <span>Sign-up</span>
+        <span (click)="onSubmitSignup()">Sign-up</span>
       </button>
 
       <div class="signup">

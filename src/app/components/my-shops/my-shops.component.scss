@@ -44,7 +44,15 @@
 
 .header-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+}
+
+.toggle-filter-button {
+  margin: 1% 5% 0 0;
+}
+
+.search-field {
+  width: 30rem;
 }
 
 .header-container-filter {

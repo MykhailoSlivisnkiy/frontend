@@ -4,6 +4,7 @@ import {MatDialog} from "@angular/material/dialog";
 import {Router} from "@angular/router";
 import {AuthService} from "../../service/auth.service";
 import {AuthUser} from "../../models/authUser";
+import {SignUpUser} from "../../models/sign-up-user";
 
 @Component({
   selector: 'app-login',
@@ -65,23 +66,9 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmitSignup() {
-    let user = this.getObjUser(
-      this.signupForm.get('name').value,
-      this.signupForm.get('login').value,
-      this.signupForm.get('password').value
-    );
-   // this.service.addUser(user);
+    let user = new SignUpUser(this.signupForm.get('login').value, this.signupForm.get('name').value, this.signupForm.get('password').value);
 
-    setTimeout(() => {
-      if (false) {
-        //this.dialog.open(DialogOnCreateOrderComponent, {width: '450px'});
-        setTimeout(() => {
-          this.showForm = false;
-          this.dialog.closeAll();
-        }, 2000)
-      }
-    }, 1000);
-
+     this.authService.register(user);
   }
 
   onSubmit() {

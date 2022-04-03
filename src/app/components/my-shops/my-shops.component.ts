@@ -6,6 +6,9 @@ import {ShopService} from "../../service/shop.service";
 import {MatDialog, MatDialogConfig} from "@angular/material/dialog";
 import {EditModuleComponent} from "../edit-module/edit-module.component";
 
+const ONLY_FAVORITE = 'My Favorite';
+const ONLY_SUBSCRIBED = 'My Subscribed';
+
 @Component({
   selector: 'app-my-shops',
   templateUrl: './my-shops.component.html',
@@ -14,19 +17,22 @@ import {EditModuleComponent} from "../edit-module/edit-module.component";
 export class MyShopsComponent implements OnInit {
 
   shops: Shop[] = [];
+  visibleShops: Shop[] = [];
   isShopsEmpty: boolean = false;
+  isToggleButtonActive: boolean = false;
   pager: Page| any;
   listOfPages: number[] = [];
   numberOfPages: number = 0;
   pageNumber: number = 0;
-  filter: string = 'All';
+  filterByName: string = '';
+  typeOfShops: string = ONLY_SUBSCRIBED;
 
   constructor(private route: ActivatedRoute, private router: Router, private goodsService: ShopService, private matDialog: MatDialog) { }
 
   ngOnInit(): void {
     this.pageNumber = parseInt(<string>this.route.snapshot.paramMap.get(('page')));
 
-    this.setPage('All', Number.isNaN(this.pageNumber) ? 0 : this.pageNumber - 1);
+    this.setPage(Number.isNaN(this.pageNumber) ? 0 : this.pageNumber - 1);
   }
 
   createNewShop() {
@@ -38,38 +44,65 @@ export class MyShopsComponent implements OnInit {
     dialogConfig.width = "750px";
     const modalDialog = this.matDialog.open(EditModuleComponent, dialogConfig);
 
-    this.matDialog.afterAllClosed.subscribe(data=> this.setPage(this.filter, 0));
+    this.matDialog.afterAllClosed.subscribe(data=> this.setPage(0));
 
   }
 
   setPageByPagination(page: number) {
-    this.setPage(this.filter, page);
+    this.setPage(page);
   }
 
-  setPage(filter: string, page: number) {
+  setPage(page: number) {
 
     // if(page < 0 || page >= this.pager?.totalPages) {
     //   return;
     // }
 
-    this.goodsService.getAllFavorite(localStorage.getItem('access_token'))
-      .subscribe((data: Shop[]) => {
-        this.pager = data;
-        this.numberOfPages =0;
-        this.shops = data;
+    if(this.isToggleButtonActive) {
+      this.goodsService.getAllFavorite()
+        .subscribe((data: Shop[]) => {
+          this.pager = data;
+          this.numberOfPages = 0;
+          this.shops = data;
+          this.visibleShops =  Object.assign([], this.shops);
 
-        // this.listOfPages = Array(this.numberOfPages).fill(0).map((x, i) => (i));
+          // this.listOfPages = Array(this.numberOfPages).fill(0).map((x, i) => (i));
 
 
-        this.isShopsEmpty = true;
-      });
+          this.isShopsEmpty = true;
+        });
+    } else {
+      this.goodsService.getAllSubscribed()
+        .subscribe((data: Shop[]) => {
+          this.pager = data;
+          this.numberOfPages = 0;
+          this.shops = data;
+          this.visibleShops =  Object.assign([], this.shops);
+
+          // this.listOfPages = Array(this.numberOfPages).fill(0).map((x, i) => (i));
+
+
+          this.isShopsEmpty = true;
+        });
+    }
   }
 
-  changeFilter(filter: string) {
-
-    this.filter = filter;
-
-    this.setPage(filter, 0);
+  handleToggleChange() {
+    this.isToggleButtonActive = !this.isToggleButtonActive;
+    this.typeOfShops = this.isToggleButtonActive ? ONLY_FAVORITE : ONLY_SUBSCRIBED;
+    this.setPage(0);
   }
 
+  updateSearch(target: EventTarget | null) {
+
+    if((<HTMLInputElement>target).value === '') {
+      this.visibleShops =  Object.assign([], this.shops);
+    } else {
+
+      this.goodsService.getAllByName(this.typeOfShops, (<HTMLInputElement>target).value)
+        .subscribe((data: Shop[]) => {
+          this.visibleShops = data;
+        });
+    }
+  }
 }

@@ -29,6 +29,7 @@ import {MatGridListModule} from "@angular/material/grid-list";
 import {MatSelectModule} from "@angular/material/select";
 import {JwPaginationModule} from "jw-angular-pagination";
 import { MyShopsComponent } from './components/my-shops/my-shops.component';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { MyShopsComponent } from './components/my-shops/my-shops.component';
   imports: [
     JwPaginationModule,
     BrowserAnimationsModule,
+    MatSlideToggleModule,
     FormsModule,
     CommonModule,
     AgmCoreModule.forRoot({
